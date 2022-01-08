@@ -52,4 +52,4 @@ const repPercentage = async (repAccount) => {
     return (repWeight / onlineWeight) * 100;
 }
 
-const setNode = (userNode) => { httpNode = userNode; }
+const setEndpoint = (userNode) => { httpNode = userNode; }

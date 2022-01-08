@@ -1,0 +1,102 @@
+<html>
+
+    <head>
+
+        <title>Banano Representatives</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="icon" href="https://bananoplanet.cc/media/banano-icon.png">
+
+    </head>
+
+    <body>
+        
+        <h1>Online Banano Representatives</h1>
+
+        <table>
+            <tr>
+                <th>Network voting weight (BAN)</th>
+            </tr>
+            <tr>
+                <td id="networkWeight"></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table id="leaderboardTable">
+            <tr>
+                <th>#</th>
+                <th>Representative</th>
+                <th>Voting weight (BAN)</th>
+                <th>%</th>
+            </tr>
+        </table>
+        
+        <p class="footer">
+            <a target="_blank" href="https://creeper.banano.cc/explorer/account/ban_1shay5hdkere33pb5gawzcicp1197xp64y7gutbudj39jzo7extguucu5uz1/history">
+                Made by Shay, support my future work:<br>
+                <code>ban_1shay5hdkere33pb5gawzcicp1197xp64y7gutbudj39jzo7extguucu5uz1</code>
+            </a>
+        </p>
+
+        <script src="../src/banano-rep.js"></script>
+
+        <script>
+            formatNumber = (num) => {
+                if (num.toString().includes(`.`)) {
+                    let half = num.split(`.`);
+                    return half[0].toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + `.` + half[1];
+                } else {
+                    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+                };
+            };
+            const leaderboardTable = document.getElementById("leaderboardTable");
+            const appendLB = (rank, address, weight, percentage) => {
+                let userRow = leaderboardTable.insertRow(-1);
+                let cell_rank = userRow.insertCell(-1);
+                let cell_address = userRow.insertCell(-1);
+                let cell_weight = userRow.insertCell(-1);
+                let cell_percentage = userRow.insertCell(-1);
+                cell_rank.innerHTML = rank;
+                cell_address.innerHTML = address;
+                cell_weight.innerHTML = weight;
+                cell_percentage.innerHTML = percentage;
+            }
+            getOnlineWeight().then(networkWeight => {
+                document.getElementById("networkWeight").innerText = `${formatNumber((networkWeight / 1e29).toFixed(2))}`;
+                getOnlineRepresentatives().then(onlineReps => {
+                    let repList = [
+                        // [
+                        //     "ban_1planet...",
+                        //     1234
+                        // ]
+                    ];
+                    Object.keys(onlineReps).forEach(rep => {
+                        repList.push([
+                            rep,
+                            onlineReps[rep]["weight"]
+                        ]);
+                    });
+                    console.log(repList);
+                    repList.sort((a, b) => b[1] - a[1]);
+                    let rankIndex = 0;
+                    repList.forEach(rep => {
+                        rankIndex += 1;
+                        appendLB(
+                            rankIndex,
+                            `<a href="${`https://creeper.banano.cc/explorer/account/${rep[0]}/delegators`}" target="_blank">${rep[0]}</a>`,
+                            formatNumber((rep[1] / 1e29).toFixed(2)),
+                            (100 * (rep[1] / networkWeight)).toFixed(2) + "%"
+                        );
+                    })
+                });
+            });
+            // tableData.forEach(u => {
+            //     appendLB(u.rank, u.username, u.event_rice);
+            // });
+        </script>
+
+    </body>
+
+</html>

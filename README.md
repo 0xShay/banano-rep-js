@@ -4,11 +4,13 @@ banano-rep.js is an easily importable JavaScript library with a multitude of fun
 ## Installation
 The main script is located at [src/banano-rep.js](src/banano-rep.js) - just download this script locally and load it in at the bottom of your webpage!
 ```html
-<script src="/scripts/banano-rep.js"></script>
+<script src="/src/banano-rep.js"></script>
 ```
 
 ## Usage
 The full documentation of all the available functions can be found [here](docs/functions.md).
+<br />
+You can find an example site using the script at [example/index.html](example/index.html). 
 
 ## Contribute
 Pull requests are welcome! If you would like to contribute, please state what changes you made and how it helps improve the repo in your PR description.

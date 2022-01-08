@@ -11,6 +11,8 @@ All Banano-related values returned are returned in raw units. *(1 Banano = 1e29 
 
 `repPercentage(representativeAddress)` returns the % of online weight that `representativeAddress` has
 
+`setEndpoint(endpoint)` sets the endpoint to `endpoint` (`https://api-beta.banano.cc` by default)
+
 ### Help fund my future projects!
 This script is a community-created script, you can learn more about Banano at their official Discord server [chat.banano.cc](https://chat.banano.cc) - if you're feeling generous feel free to send me some potassium!
 <br /><br />
