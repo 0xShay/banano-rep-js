@@ -17,5 +17,5 @@ Pull requests are welcome! If you would like to contribute, please state what ch
 This script is a community-created script, you can learn more about Banano at their official Discord server [chat.banano.cc](https://chat.banano.cc) - if you're feeling generous feel free to send me some potassium!
 <br /><br />
 [ban_1shay5hdkere33pb5gawzcicp1197xp64y7gutbudj39jzo7extguucu5uz1](https://creeper.banano.cc/explorer/account/ban_1shay5hdkere33pb5gawzcicp1197xp64y7gutbudj39jzo7extguucu5uz1/history)
-<br />
+<br /><br />
 ![ban_1shay5hdkere33pb5gawzcicp1197xp64y7gutbudj39jzo7extguucu5uz1](https://imgur.com/HBksiOM.png)
