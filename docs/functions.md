@@ -5,11 +5,13 @@ All Banano-related values returned are returned in raw units. *(1 Banano = 1e29 
 
 `getRepWeight(representativeAddress)` returns raw delegated voting weight to `representativeAddress`
 
+`repPercentage(representativeAddress)` returns the % of online weight that `representativeAddress` has
+
 `getOnlineRepresentatives()` returns an object of objects regarding every online representative and their respective raw voting weights
 
 `getOnlineWeight()` returns total raw online network voting weight
 
-`repPercentage(representativeAddress)` returns the % of online weight that `representativeAddress` has
+`accountInfo(address)` returns information about `address` eg. balance, frontier block
 
 `setEndpoint(endpoint)` sets the endpoint to `endpoint` (`https://api-beta.banano.cc` by default)
 
