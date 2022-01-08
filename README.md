@@ -9,7 +9,7 @@ The main script is located at [src/banano-rep.js](src/banano-rep.js) - just down
 ```
 
 ### Usage
-The full documentation of all the available functions can be found [here](docs/functions.md)
+The full documentation of all the available functions can be found [here](docs/functions.md).
 
 ### Contribute
 Pull requests are welcome! If you would like to contribute, please state what changes you made and how it helps improve the repo in your PR description.
